@@ -2,7 +2,7 @@ from antlr4 import *
 from WorkflowLexer import WorkflowLexer
 from WorkflowParser import WorkflowParser
 from WorkflowVisitor import WorkflowVisitor
-from workflow_error import WorkflowErrorListener
+from workflow_error import WorkflowErrorListener 
 
 
 class WorkflowExecutor(WorkflowVisitor):
@@ -139,13 +139,13 @@ def run_workflow(file_path):
 
     lexer = WorkflowLexer(input_stream)
     lexer.removeErrorListeners()
-    lexer.addErrorListener(WorkflowErrorListener())
+    lexer.addErrorListener(WorkflowErrorListener()) 
 
     tokens = CommonTokenStream(lexer)
 
     parser = WorkflowParser(tokens)
     parser.removeErrorListeners()
-    parser.addErrorListener(WorkflowErrorListener())
+    parser.addErrorListener(WorkflowErrorListener()) #error
 
     tree = parser.program()
 

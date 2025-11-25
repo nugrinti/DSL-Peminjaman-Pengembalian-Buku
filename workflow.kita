@@ -1,0 +1,25 @@
+// definisi buku
+define book B-123 {
+    title = "Pemrograman Python",
+    status = "available",
+    due = "2025-12-01"
+};
+
+// definisi member
+define A001 {
+    name = "Andi",
+    type = "student"
+};
+
+// transaksi peminjaman
+borrow book B-123 with due="2026-01-10";
+
+// update status buku setelah dipinjam
+update book B-123 set status="borrowed";
+
+// pengecekan kondisi dalam workflow
+if book.status == "borrowed" then {
+    query select title, status where book.status == "borrowed";
+} else {
+    query select * where book.status != "borrowed";
+};

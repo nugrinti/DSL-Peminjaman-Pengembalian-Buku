@@ -145,7 +145,7 @@ def run_workflow(file_path):
 
     parser = WorkflowParser(tokens)
     parser.removeErrorListeners()
-    parser.addErrorListener(WorkflowErrorListener()) #error
+    #parser.addErrorListener(WorkflowErrorListener()) #error
 
     tree = parser.program()
 
